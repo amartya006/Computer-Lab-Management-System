@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<br>
+
+    <div class="button-group">
+
+    <a href='Monitor-tb.html' class='btn btn-primary btn-md' role='button'> Monitor </a>
+    <a href="{% url 'add_monitor' %}" class='btn btn-warning btn-sm' role='button'> + </a>
+
+    <a href='CPU-tb.html' class='btn btn-primary btn-md' role='button'> CPU </a>
+    <a href='{% url 'add_cpu' %}' class='btn btn-warning btn-sm' role='button'> + </a>
+
+    <a href='Keyboard-tb.html' class='btn btn-primary btn-md' role='button'> Keyboard </a>
+    <a href='{% url 'add_keyboard' %}' class='btn btn-warning btn-sm' role='button'> + </a>
+
+    <a href='Mouse-tb.html' class='btn btn-primary btn-md' role='button'> Mouse </a>
+    <a href='{% url 'add_mouse' %}' class='btn btn-warning btn-sm' role='button'> + </a>
+        
+    </div>
+
+<br>
+
+    
+{% endblock %}
+
+
+
+
+    

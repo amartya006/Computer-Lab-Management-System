@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<br>
+
+    <div class="button-group">
+
+    <a href='{% url 'display_monitor' %}' class='btn btn-primary btn-md' role='button'> Monitor </a>
+    <a href='{% url 'add_monitor' %}' class='btn btn-warning btn-sm' role='button'> + </a>
+
+    <a href='{% url 'display_CPU' %}' class='btn btn-primary btn-md' role='button'> CPU </a>
+    <a href='{% url 'add_cpu' %}' class='btn btn-warning btn-sm' role='button'> + </a>
+
+    <a href='{% url 'display_keyboard' %}' class='btn btn-primary btn-md' role='button'> Keyboard </a>
+    <a href='{% url 'add_keyboard' %}' class='btn btn-warning btn-sm' role='button'> + </a>
+
+    <a href='{% url 'display_mouse' %}' class='btn btn-primary btn-md' role='button'> Mouse </a>
+    <a href='{% url 'add_mouse' %}' class='btn btn-warning btn-sm' role='button'> + </a>
+        
+    </div>
+
+<br>
+
+<h4> Currently Viewing: Monitors </h4>
+
+<br>
+
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Brand</th>
+            <th>Type</th>
+            <th>Size(inches)</th>
+            <th>Price</th>
+            <th>Display</th>
+            <th></th>
+          </tr>
+        </thead>
+        
+        <tbody>
+            
+            {% for item in items %}
+            
+            <tr>
+                <td>{{ item.pk }}</td>
+                <td>{{ item.brand }}</td>
+                <td>{{ item.type }}</td>
+                <td>{{ item.size }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.display }}</td>
+                <td>
+                    <a href='{% url 'edit_monitor' item.pk %}' class='btn btn-warning btn-sm' role='button'> Edit </a>
+                    <a href='{% url 'delete_monitor' item.pk %}' class='btn btn-danger btn-sm' role='button'> Delete </a>
+                </td>
+            </tr>
+            
+            {% endfor %}
+
+        </tbody>
+        
+    </table>
+{% endblock %}
+
+
+
+
+    
